@@ -1,11 +1,40 @@
 // Declare global variables
 let numRows = 0;
 let numCols = 0;
-let colorSelected; 
+let colorSelected = "Orange"; 
+let grid = document.getElementById("grid");
+
+// Color a cell with selected color
+function updateCellColor(element) {
+    element.style.backgroundColor = colorSelected;
+}
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+
+    let newRow = grid.insertRow();
+    ++numRows;
+
+    // Case 1: No existing cells (creates 1x1)
+    if (numCols == 0) {
+        
+        numCols = 1;
+        let newCell = newRow.insertCell();
+        newCell.onclick = () => updateCellColor(newCell);
+
+    } else {
+
+        for (let i = 0; i < numCols; ++i) {
+
+            let newCell = newRow.insertCell();
+            newCell.onclick = () => updateCellColor(newCell);
+
+        }
+
+    }
+
+    ++numRows;
+
 }
 
 // Add a column
