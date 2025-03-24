@@ -150,5 +150,15 @@ function fillAll() {
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    
+    for (let row = 0; row < numRows; ++row) {
+
+        for (let col = 0; col < numCols; ++col) {
+            
+            grid.rows[row].cells[col].style.backgroundColor = "";
+
+        }
+
+    }
+
 }
