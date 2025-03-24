@@ -33,13 +33,31 @@ function addR() {
 
     }
 
-    ++numRows;
-
 }
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    
+    if (numCols === 0) {
+
+        numRows = 1;
+        let newRow = grid.insertRow();
+        let newCell = newRow.insertCell();
+        newCell.onclick = () => updateCellColor(newCell);
+
+    } else {
+
+        for (let i = 0; i < numRows; ++i) {
+
+            let newCell = grid.rows[i].insertCell();
+            newCell.onclick = () => updateCellColor(newCell);
+
+        }
+
+    }
+
+    ++numCols;
+
 }
 
 // Remove a row
