@@ -1,12 +1,13 @@
 // Declare global variables
 let numRows = 0;
 let numCols = 0;
-let colorSelected = "Orange"; 
+let colorSelected = ""; 
 let grid = document.getElementById("grid");
 
 // Color a cell with selected color
 function updateCellColor(element) {
     element.style.backgroundColor = colorSelected;
+    console.log(element.style.backgroundColor);
 }
 
 // Add a row
@@ -109,7 +110,25 @@ function selectColor(){
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    
+    if (colorSelected === "" || colorSelected === "SELECT") return;
+
+    for (let row = 0; row < numRows; ++row) {
+
+        for (let col = 0; col < numCols; ++col) {
+            
+            let curr = grid.rows[row].cells[col];
+            
+            if (curr.style.backgroundColor === "") {
+
+                updateCellColor(curr);
+
+            }
+
+        }
+
+    }
+
 }
 
 // Fill all cells
