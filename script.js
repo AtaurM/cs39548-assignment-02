@@ -103,13 +103,13 @@ function removeC() {
 }
 
 // Set global variable for selected color
-function selectColor(){
+function selectColor() {
     colorSelected = document.getElementById("selectedColorId").value;
     console.log(colorSelected);
 }
 
 // Fill all uncolored cells
-function fillU(){
+function fillU() {
     
     if (colorSelected === "" || colorSelected === "SELECT") return;
 
@@ -132,8 +132,20 @@ function fillU(){
 }
 
 // Fill all cells
-function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+function fillAll() {
+
+    if (colorSelected === "" || colorSelected === "SELECT") return;
+
+    for (let row = 0; row < numRows; ++row) {
+
+        for (let col = 0; col < numCols; ++col) {
+            
+            updateCellColor(grid.rows[row].cells[col]);
+
+        }
+
+    }
+
 }
 
 // Clear all cells
