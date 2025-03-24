@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Grid Maker</title>
+
+    <title>Ataur's Grid Maker</title>
     <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
+
+    <h1>Ataur's Grid Maker</h1>
+
     <!-- Menu Buttons -->
-    <button onclick="addR()">Add Row</button>
-    <button onclick="addC()">Add Col</button>
-    <button onclick="removeR()">Remove Row</button>
-    <button onclick="removeC()">Remove Col</button>
-    <button onclick="fillU()">Fill All Uncolored</button>
-    <button onclick="fillAll()">Fill All</button>
-    <button onclick="clearAll()">Clear</button>
-    <select onchange="selectColor()" id="selectedColorId">
-        <option value="SELECT">SELECT</option>
-        <option value="Red">Red</option>
-        <option value="Blue">Blue</option>
-        <option value="Green">Green</option>
-        <option value="Yellow">Yellow</option>
-    </select>
+    <div id="menu"> 
+
+        <button onclick="addR()">Add Row</button>
+        <button onclick="addC()">Add Col</button>
+        <button onclick="removeR()">Remove Row</button>
+        <button onclick="removeC()">Remove Col</button>
+        <button onclick="fillU()">Fill All Uncolored</button>
+        <button onclick="fillAll()">Fill All</button>
+        <button onclick="clearAll()">Clear</button>
+
+        <select onchange="selectColor()" id="selectedColorId">
+            <option value="SELECT">SELECT</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+        </select>
+
+    </div>
+
     <!-- Grid Table -->
+
     <table id="grid">
         
     </table>
+
     <!-- Script -->
     <script src="script.js"></script>
+
 </body>
+
 </html>

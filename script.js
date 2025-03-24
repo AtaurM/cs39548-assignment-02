@@ -23,6 +23,7 @@ function addR() {
         let newCell = newRow.insertCell();
         newCell.onclick = () => updateCellColor(newCell);
 
+    // Case 2: Fill new row with 1 cell for each column
     } else {
 
         for (let i = 0; i < numCols; ++i) {
@@ -39,6 +40,7 @@ function addR() {
 // Add a column
 function addC() {
     
+    // Case 1: No existing cells (create 1x1)
     if (numCols === 0) {
 
         numRows = 1;
@@ -46,6 +48,7 @@ function addC() {
         let newCell = newRow.insertCell();
         newCell.onclick = () => updateCellColor(newCell);
 
+    // Case 2: Add 1 cell to the end of each existing row
     } else {
 
         for (let i = 0; i < numRows; ++i) {
@@ -80,6 +83,7 @@ function removeR() {
 // Remove a column
 function removeC() {
     
+    // If there are columns, delete the last cell in each row
     if (numCols > 0) {
 
         for (let i = 0; i < numRows; ++i) {
@@ -92,6 +96,7 @@ function removeC() {
 
     }
 
+    // Remove empty table row elements
     if (numCols === 0) {
         
         for (let i = 0; i < numRows; ++i) { grid.deleteRow(-1); }
@@ -111,8 +116,10 @@ function selectColor() {
 // Fill all uncolored cells
 function fillU() {
     
+    // Return if no color is selected
     if (colorSelected === "" || colorSelected === "SELECT") return;
 
+    // Else, iterate grid and color empty cells
     for (let row = 0; row < numRows; ++row) {
 
         for (let col = 0; col < numCols; ++col) {
@@ -134,8 +141,10 @@ function fillU() {
 // Fill all cells
 function fillAll() {
 
+    // Return if no color is selected
     if (colorSelected === "" || colorSelected === "SELECT") return;
 
+    // Else iterate through grid and color every cell
     for (let row = 0; row < numRows; ++row) {
 
         for (let col = 0; col < numCols; ++col) {
@@ -151,6 +160,7 @@ function fillAll() {
 // Clear all cells
 function clearAll(){
     
+    // Iterate through grid and reset color of all cells
     for (let row = 0; row < numRows; ++row) {
 
         for (let col = 0; col < numCols; ++col) {
